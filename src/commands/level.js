@@ -1,7 +1,7 @@
-const params = require('../../config.json');
-const { EmbedBuilder } = require('discord.js');
 const axios = require('axios');
 const qs = require('querystring');
+const params = require('../../config.json');
+const { EmbedBuilder } = require('discord.js');
 
 function setDifficult(diff, rate) {
     if(diff === 1) diff = 'auto';
