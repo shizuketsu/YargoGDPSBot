@@ -86,7 +86,7 @@ module.exports = {
                 break;
         }
 
-        likeEmoji = lvlData.likes > -1 ? '<:like:1291805792374362152>' : '<:dislike:1291805506880667688>';
+        likeEmoji = lvlData.likes > -1 ? params.emoji.like : params.emoji.dislike;
 
         if(lvlData.is_epic > 0) lvlDiff = setDifficult(lvlData.stars_got, 'epic');
         else if(lvlData.is_featured > 0) lvlDiff = setDifficult(lvlData.stars_got, 'featured');
@@ -95,7 +95,7 @@ module.exports = {
             .setColor('#92a2ff')
             .setTitle('Найден уровень')
             .setThumbnail(lvlDiff)
-            .setDescription(`<:play:1291806080900399188> **${lvlData.name}** by __${lvlData.username}__\n<:info:1291805710673383424> ID: \`${lvlData.id}\`\n<:length:1291805762410254387> \`${lvlLength}\` ${likeEmoji} \`${Math.abs(lvlData.likes)}\` <:downloads:1291805540355149935>\`${lvlData.downloads}\``)
+            .setDescription(`${params.emoji.play} **${lvlData.name}** by __${lvlData.username}__\n${params.emoji.info} ID: \`${lvlData.id}\`\n${params.emoji.length} \`${lvlLength}\` ${likeEmoji} \`${Math.abs(lvlData.likes)}\` ${params.emoji.downloads}\`${lvlData.downloads}\``)
             .setFooter({ text: 'Отправил ' + msg.author.username, iconURL: msg.author.displayAvatarURL() });
 
         await msg.channel.send({ embeds: [embed] });
