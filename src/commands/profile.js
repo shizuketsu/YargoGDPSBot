@@ -35,8 +35,6 @@ module.exports =  {
             throw new Error(e.message);
         }
 
-        console.log(userData.role);
-        console.log(userData.stats);
         const embed = new EmbedBuilder()
             .setColor('#92a2ff')
             .setTitle('Найден пользователь')
